@@ -1,0 +1,8 @@
+<div data-sly-use.auth="com.mysite.aem.core.models.AuthorDetails">
+	<h2>Name: ${auth.name}</h2>
+	<h3>Gender: ${auth.gender}</h3>
+	<div data-sly-list.item="${auth.books}">
+		book number: ${itemList.count}
+		<p>Book name: ${item}</p>
+	</div>
+</div>
