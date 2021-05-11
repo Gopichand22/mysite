@@ -1,4 +1,4 @@
-This is author
+FThis is author
 <div data-sly-use.auth="com.mysite.aem.core.models.AuthorDetails">
 	<h2>Name: ${auth.name}</h2>
 	<h3>Gender: ${auth.gender}</h3>
@@ -7,6 +7,50 @@ This is author
 		book number: ${itemList.count}
 		<p>Book name: ${item}</p>
 	</div>
-	
+
 	${auth.selectit}
+</div>
+
+<hr>
+<div data-sly-use.osgiconfig="com.mysite.aem.core.models.OsgiModel">
+	<h4>
+		<b>Modularity for AttributeDefination</b>
+	</h4>
+	<br>
+
+	<div>
+		<p>
+			Service ID : <b>${osgiconfig.serviceId}</b>
+		</p>
+	</div>
+	<div>
+		<p>
+			Service Name : <b>${osgiconfig.serviceNameModule}</b>
+		</p>
+	</div>
+	<div>
+		<p>
+			Service URL : <b>${osgiconfig.serviceURL}</b>
+		</p>
+	</div>
+	<hr>
+</div>
+<hr>
+<div data-sly-list.item="${osgiconfig.allOSGiConfigs}">
+	------Config # <b>${itemList.count}</b>-----
+	<div>
+		<p>
+			Config ID: <b>${item.configID}</b>
+		</p>
+	</div>
+	<div>
+		<p>
+			Service Name: <b>${item.serviceName}</b>
+		</p>
+	</div>
+	<div>
+		<p>
+			Service URL : <b>${item.serviceURL}</b>
+		</p>
+	</div>
 </div>

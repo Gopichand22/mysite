@@ -1,0 +1,29 @@
+<h1 style="background-color:black;color:white;border:4px groove white;"> Coding challenge on sling and sightly & Sling models by Naresh Sir</h1>
+<h3 style="text-align:center;">Slot 5-6:30</h3>
+<!-- I used your dialog content thing which u shared earlier -->
+<div data-sly-use.code="com.mysite.aem.core.models.CodingChallenge">
+<!-- single field --> 
+	<h2>Trainee Name: ${code.name}</h2>
+<!-- check box which covers Boolean thing-->
+<h1 style="background-image: linear-gradient(to right, red, aqua);">Boolean thing</h1>
+	<h3>This person is a Student: ${code.gender}</h3>
+	<h3 style="background-image: linear-gradient(to right, red, aqua);color:white">here i am using data-sly-test</h3>
+	<p data-sly-test="${code.gender}">He is a Student</p>
+	<p data-sly-test="${!code.gender}">He is not a Student</p>
+<!-- multifield for entering books data  which covers multifield-->
+<h1 style="background-image: linear-gradient(to right, red, aqua);">list of books Multifield</h1>
+	<div data-sly-list.item="${code.books}">
+		book number: ${itemList.count}
+		<p>Book name: ${item}</p>
+	</div>
+<!-- dropdown for selecting single option -->	
+	${code.selectit}
+	
+<!-- i am trying the sightly tags here -->
+<h1 style="text-decoration:underline;background-image: linear-gradient(to right, red, aqua);">Here are the data sly(sightly tags) things</h1>
+<div data-sly-include="testme.html"></div>
+<template data-sly-template.temp>
+<h3 style="background-image: linear-gradient(to right, red, aqua);color:white">This is a template and using data-sly-call to print this</h3>
+</template>
+<div data-sly-call="${temp}"></div>
+</div>

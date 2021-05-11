@@ -1,0 +1,34 @@
+<hr>
+<div data-sly-use.osgiCon="com.mysite.aem.core.models.OsgiModel">
+	<h4>
+		<strong>Modularity for AttristronguteDefination</strong>
+	</h4>
+	<br>
+
+	<div>
+		<p>
+			Student ID : <strong>${osgiCon.studentId}</strong>
+		</p>
+	</div>
+	<div>
+		<p>
+			Student Name : <strong>${osgiCon.studentName}</strong>
+		</p>
+	</div>
+
+	<hr>
+</div>
+<hr>
+
+<div
+	data-sly-use.factoryConfig="com.mysite.aem.core.models.OsgiFactoryModel"></div>
+
+<div data-sly-list="${factoryConfig.allConfigs}">
+	S/N:<strong>${itemList.count}</strong>
+	<div>
+		Student Id:<strong>${item.studentId}</strong>
+	</div>
+	<div>
+		Student Name:<strong>${item.studentName}</strong>
+	</div>
+</div>
