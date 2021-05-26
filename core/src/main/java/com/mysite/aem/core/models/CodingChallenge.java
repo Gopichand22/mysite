@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.sling.api.SlingHttpServletRequest;
+import javax.inject.Inject;
+
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 //********dialog/component creation*************
 //multifield,
@@ -21,21 +22,20 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 //call,
 //use,
 //repeat,
-//list,
-//attribute. 	
-@Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+//list. 	
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CodingChallenge {
 	
-	@ValueMapValue
+	@Inject
 	private String name;
 
-	@ValueMapValue
+	@Inject
 	private boolean gender;
 
-	@ValueMapValue
+	@Inject
 	private List<String> books;
 	
-	@ValueMapValue
+	@Inject
 	private String selectit;
 	
 	public String getName() {
