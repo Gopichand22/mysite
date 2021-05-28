@@ -20,27 +20,33 @@ public class WorkFlowSample implements WorkflowProcess{
 	private static final String TYPE_JCR_PATH = "JCR_PATH";
 
 	@Override
-	public void execute(WorkItem item, WorkflowSession session, MetaDataMap args) throws WorkflowException {
-
-		WorkflowData workflowData = item.getWorkflowData();
-		if (workflowData.getPayloadType().equals(TYPE_JCR_PATH)) {
-			String path = workflowData.getPayload().toString() + "/jcr:content";
-			try {
-				Node node = (Node) session.getSession().getItem(path);
-				if (node != null) {
-					node.setProperty("approved", readArgument(args));
-					session.getSession().save();
-				}
-			} catch (RepositoryException e) {
-				throw new WorkflowException(e.getMessage(), e);
-			}
-		}
+	public void execute(WorkItem arg0, WorkflowSession arg1, MetaDataMap arg2) throws WorkflowException {
+		// TODO Auto-generated method stub
+		
 	}
 
-	private boolean readArgument(MetaDataMap args) {
-		String argument = args.get("PROCESS_ARGS", "false");
-		return argument.equalsIgnoreCase("true");
-	}
+//	@Override
+//	public void execute(WorkItem item, WorkflowSession session, MetaDataMap args) throws WorkflowException {
+//
+//		WorkflowData workflowData = item.getWorkflowData();
+//		if (workflowData.getPayloadType().equals(TYPE_JCR_PATH)) {
+//			String path = workflowData.getPayload().toString() + "/jcr:content";
+//			try {
+//				Node node = (Node) session.getSession().getItem(path);
+//				if (node != null) {
+//					node.setProperty("approved", readArgument(args));
+//					session.getSession().save();
+//				}
+//			} catch (RepositoryException e) {
+//				throw new WorkflowException(e.getMessage(), e);
+//			}
+//		}
+//	}
+//
+//	private boolean readArgument(MetaDataMap args) {
+//		String argument = args.get("PROCESS_ARGS", "false");
+//		return argument.equalsIgnoreCase("true");
+//	}
 
 	
 

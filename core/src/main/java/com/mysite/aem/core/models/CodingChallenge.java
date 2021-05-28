@@ -21,8 +21,7 @@ import org.apache.sling.models.annotations.Model;
 //test,
 //call,
 //use,
-//repeat,
-//list. 	
+//list.	
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CodingChallenge {
 	
